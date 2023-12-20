@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somani & Sons</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="radio" name="photos" id="check1" checked/>
+    <input type="radio" name="photos" id="check2" />
+    <input type="radio" name="photos" id="check3" />
+    <input type="radio" name="photos" id="check4" />
+
+    <div class="container">
+      <h1>Aligarh Locks Somani & Sons </h1>
+      <div class="top-content">
+        <h3>photo gallery</h3>
+        <label for="check1">All photos</label>
+        <label for="check2">family photos</label>
+        <label for="check3">childs photos</label>
+        <label for="check4">visted photos</label>
+      </div>
+      <div class="photo-gallery" id="photoGallery">
+        <!-- <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic family">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic child">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div>
+        <div class="pic place">
+            <img src="img/test.jpg" alt="">
+        </div> -->
+      </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var photoGallery = document.getElementById('photoGallery');
+  
+          // Path to the JSON file containing image filenames
+          var jsonFilePath = 'output.json';
+  
+          // Fetch the JSON file
+          fetch(jsonFilePath)
+            .then(response => response.json())
+            .then(data => {
+              // Iterate through image filenames and create image elements
+              data.images.forEach(function (filename) {
+                var imgElement = document.createElement('img');
+                imgElement.src = 'img/' + filename; // Assuming images are in the "img" folder
+                imgElement.alt = '';
+  
+                var divElement = document.createElement('div');
+                divElement.classList.add('pic', 'place');
+                divElement.appendChild(imgElement);
+  
+                photoGallery.appendChild(divElement);
+              });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+        });
+      </script>
+  </body>
+</html>
