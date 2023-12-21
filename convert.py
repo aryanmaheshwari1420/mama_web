@@ -19,7 +19,7 @@ def create_json_file(image_names, output_file):
 
 if __name__ == "__main__":
     # Replace 'your_folder_path' with the actual path to your image folder
-    folder_path = "C:\\Users\\Aryan Maheshwari\\Desktop\\mama_web\\img"
+    folder_path = "img"
 
     # Replace 'output.json' with the desired name of your JSON file
     output_file = "output.json"

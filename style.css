@@ -211,4 +211,58 @@ label:hover{
 
 
 
+/* ----------------------------------------css for mobile screen-------------------------------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(21, 19, 19);
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 20px 0; /* Adjusted margin for mobile */
+    color: whitesmoke;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    width: 50px; /* Adjusted width for mobile */
+    height: 3px;
+    background-color: crimson;
+    bottom: -5px; /* Adjusted bottom for mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 25px; /* Adjusted font size for mobile */
+        margin: 10px 0; /* Adjusted margin for mobile */
+    }
+
+    h1::before {
+        width: 30px; /* Adjusted width for mobile */
+        bottom: -3px; /* Adjusted bottom for mobile */
+    }
+}
+
+/* Rest of your CSS remains the same */
 
